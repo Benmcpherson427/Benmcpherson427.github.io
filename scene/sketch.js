@@ -11,6 +11,7 @@ let y;
 let d;
 let dx;
 let dy;
+let hit;
 
 function setup() {
   x = 390;
@@ -19,19 +20,21 @@ function setup() {
   dy = 3;
   d = 15;
   createCanvas(400, 400);
+  noStroke();
 }
 
 function draw() {
-  background(220);
+  background(255);
+  boundaries();
+  createPath();
   circel();
   moveCircle();
-  boundaries();
-  createObstacles();
+  collisionDetection();
 
 }
 
 function circel(){
-  fill("white");
+  fill("cyan");
  circle(x, y, d);
 }
 
@@ -57,10 +60,23 @@ function boundaries(){
   }
 }
 
-function createObstacles(){
+function createPath(){
   fill("black");
-  rect(0, 350, 200, 50);
-  rect(300, 170, 100, 200);
-  rect(100, 270, 200, 50);
-  rect(30, 100, 50, 200);
+  rect(200, 370, 200, 30);
+  rect(200, 200, 30, 200);
+  rect(75, 200, 125, 30);
+  rect(75, 200, 30, 120);
+  rect(75, 290, 90, 30);
+  rect(0, 150, 30, 220);
+  rect(0, 150, 275, 30);
+  rect(245, 150, 30, 200);
+  rect()
+}
+
+function collisionDetection(){
+  hit = (collideRectCircle(200, 370, 200, 30, x, y, d/2) || collideRectCircle(200, 200, 30, 200) || collideRectCircle(75, 200, 125, 30));
+  if (hit === false){
+    x = 390;
+    y = 385;
+  }
 }
