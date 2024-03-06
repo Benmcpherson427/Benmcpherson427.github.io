@@ -74,7 +74,7 @@ function createPath(){
 }
 
 function collisionDetection(){
-  hit = (collideRectCircle(200, 370, 200, 30, x, y, d/2) || collideRectCircle(200, 200, 30, 200) || collideRectCircle(75, 200, 125, 30));
+  hit = (collideRectCircle(200, 370, 200, 30, x, y, d/2) || collideRectCircle(200, 200, 30, 200, x, y, d/2) || collideRectCircle(75, 200, 125, 30, x, y, d/2));
   if (hit === false){
     x = 390;
     y = 385;
