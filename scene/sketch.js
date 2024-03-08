@@ -20,7 +20,7 @@ function setup() {
   y = 385;
   dx = 3;
   dy = 3;
-  d = 10;
+  d = 12;
   createCanvas(400, 400);
   noStroke();
 }
@@ -28,7 +28,6 @@ function setup() {
 function draw() {
   playMaze();
   winner();
-  mousePressed();
 }
 
 function playMaze(){
@@ -94,7 +93,7 @@ function createPath(){
 } 
 
 function collisionDetection(){
-  hit = (collideRectCircle(200, 370, 200, 30, x, y, d/2) || collideRectCircle(200, 200, 30, 200, x, y, d/2) 
+  hit = (collideRectCircle(200, 370, 200, 30, x, y, d) || collideRectCircle(200, 200, 30, 200, x, y, d/2) 
   || collideRectCircle(75, 200, 125, 30, x, y, d) || collideRectCircle(200, 370, 200, 30, x, y, d/2) 
   || collideRectCircle(200, 200, 30, 200, x, y, d/2) || collideRectCircle(75, 200, 125, 30, x, y, d/2)
   || collideRectCircle(75, 200, 30, 120, x, y, d/2) || collideRectCircle(75, 290, 90, 30, x, y, d/2) 
@@ -124,7 +123,6 @@ function collisionDetection(){
 function winner(){
   win = collideRectCircle(370, 30, 30, 30, x, y, d/2);
   if (win === true){
-    state = "winner";
     background("Green");
     fill("black");
     textSize(45);
@@ -136,9 +134,7 @@ function winner(){
 }
 
 function mousePressed(){
-  if (state === "winner"){
-    x = 390;
-    y = 385;
-    playMaze();
-  }
+  x = 390;
+  y = 385;
+  playMaze();
 }
