@@ -26,19 +26,18 @@ function setup() {
 }
 
 function draw() {
-  if (state === "start"){
-    displayStart();
-  }
-  else if (state === "maze"){
-    background("lightblue");
-    boundaries();
-    createPath();
-    circel();
-    moveCircle();
-    collisionDetection();
-    youWin();
-  }
+  playMaze();
+  winner();
+  mousePressed();
+}
 
+function playMaze(){
+  background("lightblue");
+  boundaries();
+  createPath();
+  circel();
+  moveCircle();
+  collisionDetection();
 }
 
 function circel(){
@@ -110,38 +109,36 @@ function collisionDetection(){
   || collideRectCircle(370, 30, 30, 30, x, y, d/2));
 
   if (hit === false){
-    background(255);
-    fill(0);
-    textSize(45);
-    textAlign(CENTER, CENTER);
-    text("You lose! Press mouse to start", width/2, height/2);
-    state = "loser";
+    x = 390;
+    y = 385;
+    // background("red");
+    // fill("black");
+    // textSize(45);
+    // textAlign(CENTER, CENTER);
+    // text("You lose!", width/2, height/2);
+    // textSize(20);
+    // text("Press mouse to play again!", width/2, height/2 + 50);
   }
 }
 
-function youWin(){
+function winner(){
   win = collideRectCircle(370, 30, 30, 30, x, y, d/2);
   if (win === true){
-    background(255);
-    fill(255);
+    state = "winner";
+    background("Green");
+    fill("black");
     textSize(45);
     textAlign(CENTER, CENTER);
-    text("You Win! Press mouse to start", width/2, height/2);
-    state = "winner";
+    text("You Win!", width/2, height/2);
+    textSize(20);
+    text("Press space to play again!", width/2, height/2 + 50);
   }
-}
-
-function displayStart(){
-  background(255);
-  fill(0);
-  textSize(45);
-  textAlign(CENTER, CENTER);
-  text("Press mouse to start", width/2, height/2);
-
 }
 
 function mousePressed(){
-  if(state === ("start" || "winner" || "loser")){
-    state = "maze";
+  if (state === "winner"){
+    x = 390;
+    y = 385;
+    playMaze();
   }
 }
