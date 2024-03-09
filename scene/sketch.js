@@ -21,13 +21,19 @@ function setup() {
   dx = 3;
   dy = 3;
   d = 12;
+  state = "start";
   createCanvas(400, 400);
   noStroke();
 }
 
 function draw() {
-  playMaze();
-  winner();
+  if (state === "start"){
+    startScreen();
+  }
+  else if (state === "play"){
+    playMaze();
+    winner();
+  }
 }
 
 function playMaze(){
@@ -93,8 +99,8 @@ function createPath(){
 } 
 
 function collisionDetection(){
-  hit = (collideRectCircle(200, 370, 200, 30, x, y, d) || collideRectCircle(200, 200, 30, 200, x, y, d/2) 
-  || collideRectCircle(75, 200, 125, 30, x, y, d) || collideRectCircle(200, 370, 200, 30, x, y, d/2) 
+  hit = (collideRectCircle(200, 370, 200, 30, x, y, d/2) || collideRectCircle(200, 200, 30, 200, x, y, d/2) 
+  || collideRectCircle(75, 200, 125, 30, x, y, d/2) || collideRectCircle(200, 370, 200, 30, x, y, d/2) 
   || collideRectCircle(200, 200, 30, 200, x, y, d/2) || collideRectCircle(75, 200, 125, 30, x, y, d/2)
   || collideRectCircle(75, 200, 30, 120, x, y, d/2) || collideRectCircle(75, 290, 90, 30, x, y, d/2) 
   || collideRectCircle(0, 150, 30, 220, x, y, d/2) || collideRectCircle(0, 150, 275, 30, x, y, d/2) 
@@ -110,13 +116,6 @@ function collisionDetection(){
   if (hit === false){
     x = 390;
     y = 385;
-    // background("red");
-    // fill("black");
-    // textSize(45);
-    // textAlign(CENTER, CENTER);
-    // text("You lose!", width/2, height/2);
-    // textSize(20);
-    // text("Press mouse to play again!", width/2, height/2 + 50);
   }
 }
 
@@ -129,12 +128,28 @@ function winner(){
     textAlign(CENTER, CENTER);
     text("You Win!", width/2, height/2);
     textSize(20);
-    text("Press space to play again!", width/2, height/2 + 50);
+    text("Press mouse to play again!", width/2, height/2 + 50);
   }
 }
 
 function mousePressed(){
   x = 390;
   y = 385;
-  playMaze();
+  state = "play";
+}
+
+function startScreen(){
+  background("blue");
+  fill("black");
+  textSize(30);
+  textAlign(CENTER, CENTER);
+  text("Press space to start!", width/2, height/2);
+  textSize(20);
+  text("Use WASD to move!", width/2, height/2 + 50);
+}
+
+function keyTyped(){
+  if (key === " "){
+    state = "play";
+  }
 }
