@@ -14,14 +14,15 @@ let state = " ";
 function setup() {
   x = 390;
   y = 385;
-  dx = 3;
-  dy = 3;
+  dx = 1;
+  dy = 1;
   d = 12;
   state = "start";
   createCanvas(400, 400);
   noStroke();
 }
 
+//depending on the state, either the start screen shows, or the maze shows
 function draw() {
   if (state === "start"){
     startScreen();
@@ -32,6 +33,7 @@ function draw() {
   }
 }
 
+// creates maze and allows other code to run
 function playMaze(){
   background("lightblue");
   boundaries();
@@ -41,11 +43,13 @@ function playMaze(){
   collisionDetection();
 }
 
+//draws the circle
 function circel(){
   fill("orange");
   circle(x, y, d);
 }
 
+// code to use WASD to move circle
 function moveCircle(){
   if (keyIsDown(87)){ //w
     y -= dy;
@@ -61,6 +65,7 @@ function moveCircle(){
   }
 }
 
+// creates world boundaries on ednge of window
 function boundaries(){
   if ((x - d/2 <= 0) || (x - d/2 >= 400) || (x + d/2 <= 0) || (x + d/2 >= 400) || (y - d/2 <= 0) || (y - d/2 >= 400) || (y + d/2 <= 0) || (y + d/2 >= 400)) {
     x = 390;
@@ -68,6 +73,7 @@ function boundaries(){
   }
 }
 
+// draws track
 function createPath(){
   fill("black");
   rect(200, 370, 200, 30);
@@ -94,6 +100,8 @@ function createPath(){
   rect(370, 30, 30, 30);
 } 
 
+
+// detects if the ball is not on tracks. resets ball if not on track
 function collisionDetection(){
   hit = (collideRectCircle(200, 370, 200, 30, x, y, d/2) || collideRectCircle(200, 200, 30, 200, x, y, d/2) 
   || collideRectCircle(75, 200, 125, 30, x, y, d/2) || collideRectCircle(200, 370, 200, 30, x, y, d/2) 
@@ -108,13 +116,15 @@ function collisionDetection(){
   || collideRectCircle(175, 40, 130, 30, x, y, d/2) || collideRectCircle(305, 0, 30, 70, x, y, d/2) 
   || collideRectCircle(305, 0, 95, 30, x, y, d/2) || collideRectCircle(370, 0, 30, 30, x, y, d/2) 
   || collideRectCircle(370, 30, 30, 30, x, y, d/2));
-
+  // resets ball
   if (hit === false){
     x = 390;
     y = 385;
   }
 }
 
+
+// displays green screen congratulating the player on beating the maze
 function winner(){
   win = collideRectCircle(370, 30, 30, 30, x, y, d/2);
   if (win === true){
@@ -128,12 +138,15 @@ function winner(){
   }
 }
 
+// allows game to be reset
 function mousePressed(){
   x = 390;
   y = 385;
   state = "play";
 }
 
+
+//displays the start screen and game controls
 function startScreen(){
   background("blue");
   fill("black");
@@ -144,6 +157,7 @@ function startScreen(){
   text("Use WASD to move!", width/2, height/2 + 50);
 }
 
+// allows game to be started/reset
 function keyTyped(){
   if (key === " "){
     state = "play";
