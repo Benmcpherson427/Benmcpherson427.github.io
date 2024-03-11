@@ -1,10 +1,6 @@
-// Project Title
-// Your Name
-// Date
-//
-// Extra for Experts:
-// - describe what you did to take this project "above and beyond"
-
+// Mazer
+// Ben McPherson
+// March 11th 2024
 
 let x;
 let y;
