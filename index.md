@@ -4,6 +4,7 @@
 - [Traffic light](trafficlight)
 - [Bouncing ball](bouncingball)
 - [Arrays & Objects](circles)
+- [Generative Art](art)
 
 ## Projects
 - [Interactive scene](scene) 

@@ -14,8 +14,8 @@ let state = " ";
 function setup() {
   x = 390;
   y = 385;
-  dx = 1;
-  dy = 1;
+  dx = 5;
+  dy = 5;
   d = 12;
   state = "start";
   createCanvas(400, 400);
