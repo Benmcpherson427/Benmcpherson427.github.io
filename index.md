@@ -8,4 +8,5 @@
 - [Terrain Generation](terrain)
 
 ## Projects
-- [Interactive scene](scene) 
+- [Interactive scene](scene)
+- [Arrays scene](artsy)
