@@ -5,6 +5,7 @@
 - [Bouncing ball](bouncingball)
 - [Arrays & Objects](circles)
 - [Generative Art](art)
+- [Terrain Generation](terrain)
 
 ## Projects
 - [Interactive scene](scene) 
