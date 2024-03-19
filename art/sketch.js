@@ -16,7 +16,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(0);
 
   for (let someTile of theTiles) {
     stroke(random(255), random(255), random(255));
