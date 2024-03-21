@@ -1,7 +1,7 @@
 // Project Title
 // Your Name
 // Date
-let tileSize = 10;
+let tileSize = 100;
 let theTiles = [];
 
 function setup() {
@@ -19,10 +19,11 @@ function draw() {
   background(0);
 
   for (let someTile of theTiles) {
-    stroke(random(255), random(255), random(255));
-    fill(random(255), random(255), random(255));
+    // stroke(random(255), random(255), random(255));
+    stroke(255);
+    fill(0);
     if (someTile.shape === "negative" || someTile.shape === "positive") {
-      line(someTile.xl1, someTile.yl1, someTile.xl2, someTile.yl2);
+      line(someTile.x1, someTile.y1, someTile.x2, someTile.y2);
     }
     else if (someTile.shape === "circle") {
       circle(someTile.xc, someTile.yc, someTile.dc);
@@ -66,8 +67,8 @@ function spawnTile(x, y) {
     // circle
     tile = {
       shape: "circle",
-      xc: tileSize/2,
-      yc: tileSize/2,
+      xc: x-tileSize,
+      yc: y-tileSize,
       dc: tileSize,
     };
   }
@@ -77,20 +78,20 @@ function spawnTile(x, y) {
       shape: "square",
       xs: x-tileSize/2, 
       ys: y-tileSize/2,
-      ws: tileSize/2,
-      hs: tileSize/2,
+      ws: tileSize,
+      hs: tileSize,
     };
   }
   else if (choice >= 80 && choice <101){
     // Triangle
     tile = {
       shape: "triangle",
-      xt1: tileSize/2,
-      yt1: 0,
-      xt2: 0,
-      yt2: tileSize,
-      xt3: tileSize,
-      yt3: tileSize,
+      xt1: x-tileSize/x,
+      yt1: y-tileSize/2,
+      xt2: x+tileSize,
+      yt2: y+tileSize,
+      xt3: x-tileSize,
+      yt3: y+tileSize,
     };
   }
   
