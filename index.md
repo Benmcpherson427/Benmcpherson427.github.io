@@ -9,4 +9,4 @@
 
 ## Projects
 - [Interactive scene](scene)
-- [Arrays scene](artsy)
+- [Arrays scene](neonart)
