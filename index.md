@@ -6,6 +6,7 @@
 - [Arrays & Objects](circles)
 - [Generative Art](art)
 - [Terrain Generation](terrain)
+- [Bubble Movement](bubble)
 
 ## Projects
 - [Interactive scene](scene)

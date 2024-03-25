@@ -7,8 +7,10 @@
 // I used object notation to store the coordanates of each shape and arrays to make each tile where the shapes are drawn
 // each shape is assigned a string variable which is used to determine what shape is drawn
 
+// Extras for experts: 
 
-let tileSize = 15;
+
+let tileSize = 10;
 let theTiles = [];
 
 
