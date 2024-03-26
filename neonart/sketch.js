@@ -10,8 +10,9 @@
 // Extras for experts: 
 
 
-let tileSize = 10;
+let tileSize = 15;
 let theTiles = [];
+let slider;
 
 
 // The setup starts with drawing the canvas to fit the window
@@ -22,6 +23,9 @@ let theTiles = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  slider = createSlider(10, 50, 15, 5);
+  slider.position(10, 10);
+  slider.size(200);
   for (let x = 0; x < width; x += tileSize){
     for (let y = 0; y < height; y += tileSize){
       let someTile = spawnTile(x, y);
@@ -40,7 +44,7 @@ function setup() {
 
 function draw() {
   background(0);
-
+  
   for (let someTile of theTiles) {
     stroke(random(255), random(255), random(255));
     // stroke(255);
