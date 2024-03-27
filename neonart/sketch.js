@@ -20,6 +20,7 @@ let slider;
 // These loops draw a certain amount of tiles to fit the window, all dependant on the tile size, set with variable tileSize
 // The function spawnTile(x, y) is then saved as the variable someTile, which is pushed into the empty array theTiles[]
 // theTiles[] is taken to the draw loop to create the shapes in the tiles
+// The slider is made and set up to live in the top right corner. It has a minimum of 10 and a maximum of 50
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -36,16 +37,42 @@ function setup() {
 }
 
 
-// Here in the draw loop, the code starts off with a for loop which runs until every tile has been hit
-// In each tile, the function spawnTile(x, y) runs and comes up with a list of variables
-// The draw loop checks for the string variable in the list. Depending on what variable it finds, it draws that shape
-// After one shape is drawn, it then completes the code and moves on to the next tile, repeating this until all tiles have been filled with a shape
-// The draw loop also sets the backbround to black, fills the shapes with black and sets to stroke to a random colour, which constantly changes since it is in a for loop, in the draw loop
+// Here in the draw loop, the functions made for the code are run continuousy
+// The funcitons set the background, make the tiles, make the shapes, and updates everyhting when the tile size is changed
 
 function draw() {
   background(0);
+  createShapes();
+  changeTileSize();
   
+}
+
+function changeTileSize() {
+
+  // Just to help debug
+  textSize(100);
+  textAlign(CENTER, CENTER);
+  fill(255);
+  text(tileSize, width/2, height/2);
+
+
+  if (tileSize !== slider.value()) {
+    tileSize = slider.value();
+    theTiles = [];
+    for (let x = 0; x < width; x += tileSize){
+      for (let y = 0; y < height; y += tileSize){
+        let someTile = spawnTile(x, y);
+        theTiles.push(someTile);
+      }
+    }
+  }
+}
+
+
+
+function createShapes() {
   for (let someTile of theTiles) {
+    
     stroke(random(255), random(255), random(255));
     // stroke(255);
     fill(0);
@@ -62,8 +89,8 @@ function draw() {
       triangle(someTile.xt1, someTile.yt1, someTile.xt2, someTile.yt2, someTile.xt3, someTile.yt3);
     }
   }
-}
 
+}
 
 // The function spawnTile(x, y) is used to spawn a tile with an undetermined shape in it
 // It randomly chooses a number between 0 to 100 and sets it as the choice
