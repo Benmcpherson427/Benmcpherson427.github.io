@@ -5,9 +5,10 @@
 // Decription of whole code - The following is code to make generative art where either a slope, circle, 
 // triangle or square which has the stroke changing constantly
 // I used object notation to store the coordanates of each shape and arrays to make each tile where the shapes are drawn
-// each shape is assigned a string variable which is used to determine what shape is drawn
+// Th size of the tiles are changable using the slider in the top right of the window
 
-// Extras for experts: 
+// Extras for experts: I used the slider function to allow me to change the size of the tiles without going into the code, resetting the window, or using keys/mouse function.
+// The slider is a built in p5.js function
 
 
 let tileSize = 15;
@@ -24,7 +25,7 @@ let slider;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  slider = createSlider(10, 50, 15, 5);
+  slider = createSlider(10, 50, 15, 1);
   slider.position(10, 10);
   slider.size(200);
   for (let x = 0; x < width; x += tileSize){
@@ -47,13 +48,16 @@ function draw() {
   
 }
 
+
+// The function changeTileSize is called everytime the slider is changed
+// When the slider is changed, the array theTiles is cleared and remade with tileSize = slider.value()
 function changeTileSize() {
 
   // Just to help debug
-  textSize(100);
-  textAlign(CENTER, CENTER);
-  fill(255);
-  text(tileSize, width/2, height/2);
+  // textSize(100);
+  // textAlign(CENTER, CENTER);
+  // fill(255);
+  // text(tileSize, width/2, height/2);
 
 
   if (tileSize !== slider.value()) {
@@ -69,6 +73,10 @@ function changeTileSize() {
 }
 
 
+// The function createShapes is what actually makes the shapes once the tiles have been made and the shapes have been decided
+// Each shape is set to a string variable in the spawnTile. that variabel is then given to a tile on the window
+// the createShapes function runs through every tile and checks to see what string  is present in that tile
+// It then creates that corresponding shape on that tile
 
 function createShapes() {
   for (let someTile of theTiles) {
@@ -154,6 +162,5 @@ function spawnTile(x, y) {
       yt3: y+tileSize/2,
     };
   }
-  
   return tile;
 }
