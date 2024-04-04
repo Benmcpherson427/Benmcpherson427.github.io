@@ -11,3 +11,6 @@
 ## Projects
 - [Interactive scene](scene)
 - [Arrays scene](neonart)
+
+## Major Project
+- [Major Project](majorproject)
