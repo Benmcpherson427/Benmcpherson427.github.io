@@ -7,6 +7,7 @@
 - [Generative Art](art)
 - [Terrain Generation](terrain)
 - [Bubble Movement](bubble)
+- [2D Grid](grid)
 
 ## Projects
 - [Interactive scene](scene)
