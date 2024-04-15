@@ -8,6 +8,7 @@
 - [Terrain Generation](terrain)
 - [Bubble Movement](bubble)
 - [2D Grid](grid)
+- [Game of Life](gameoflife)
 
 ## Projects
 - [Interactive scene](scene)
