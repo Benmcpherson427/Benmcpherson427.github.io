@@ -25,10 +25,15 @@ let player = {
 }; 
 let grassIMG;
 let pavingIMG;
+let backgroundMusic;
+let cantWalkSound;
+let state = "start screen";
 
 function preload() {
   grassIMG = loadImage("grass2.png");
   pavingIMG = loadImage("paving 1.png");
+  backgroundMusic = loadSound("SpinningMonkeys.mp3");
+  cantWalkSound = loadSound("WilhelmScream.wav");
 }
 
 function setup() {
@@ -63,8 +68,13 @@ function windowResized() {
 }
 
 function draw() {
-  background(220);
-  displayGrid();
+  if (state === "start screen") {
+    background(0);
+  }
+  else if (state === "game") {
+    background(220);
+    displayGrid();
+  }
 }
 
 function keyPressed() {
@@ -88,6 +98,11 @@ function keyPressed() {
   if (key === "d") {
     movePlayer(player.x + 1, player.y + 0);
   }
+
+  if (key === " " && state === "start screen"){
+    state = "game";
+    backgroundMusic.loop();
+  }
 }
 
 function movePlayer(x, y) {
@@ -101,6 +116,9 @@ function movePlayer(x, y) {
     grid[oldy][oldx] = OPENTILE;
 
     grid[player.y][player.x] = PLAYER;
+  }
+  else {
+    cantWalkSound.play();
   }
 }
 
@@ -130,10 +148,11 @@ function displayGrid() {
   for (let y = 0; y < grid.length; y++) {
     for (let x = 0; x < grid[y].length; x++) {
       if (grid[y][x] === IMPASSIBLE) {
-    
+        
         image(grassIMG, x * cellSize, y * cellSize, cellSize);
       }
       else if (grid[y][x] === OPENTILE) {
+        
         image(pavingIMG, x * cellSize, y * cellSize, cellSize);
       }
       else if (grid[y][x] === PLAYER)  {
