@@ -13,6 +13,7 @@
 ## Projects
 - [Interactive scene](scene)
 - [Arrays scene](neonart)
+- [Jailbreak](jailbreak)
 
 ## Major Project
 - [Major Project](majorproject)
