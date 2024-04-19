@@ -8,9 +8,8 @@
 
 let grid;
 let cellSize;
-const GRID_SIZE = 10;
+const GRID_SIZE = 4;
 const PLAYER = 9;
-const BOT = 5;
 const OPENTILE = 0;
 const IMPASSIBLE = 1;
 let player = {
@@ -111,9 +110,6 @@ function displayGrid() {
       else if (grid[y][x] === PLAYER)  {
         fill("red");
       }
-      else if (grid[y][x] === BOT) {
-        fill("blue");
-      }
       square(x * cellSize, y * cellSize, cellSize);
     }
   }
@@ -140,4 +136,8 @@ function generateEmptyGrid(cols, rows) {
     }
   }
   return emptyArray;
+}
+
+function blackout() {
+
 }
