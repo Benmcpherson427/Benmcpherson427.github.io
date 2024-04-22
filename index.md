@@ -13,7 +13,7 @@
 ## Projects
 - [Interactive scene](scene)
 - [Arrays scene](neonart)
-- [Jailbreak](jailbreak)
+- [2D arrays](squarekiller)
 
 ## Major Project
 - [Major Project](majorproject)
