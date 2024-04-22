@@ -70,15 +70,19 @@ function keyPressed() {
 
   if (key === "w") {
     movePlayer(player.x + 0, player.y - 1);
+    blackout();
   }
   if (key === "s") {
     movePlayer(player.x + 0, player.y + 1);
+    blackout();
   }
   if (key === "a"){
     movePlayer(player.x - 1, player.y + 0);
+    blackout();
   }
   if (key === "d") {
     movePlayer(player.x + 1, player.y + 0);
+    blackout();
   }
 
   if (key === " " && state === "start screen"){
@@ -139,5 +143,13 @@ function generateEmptyGrid(cols, rows) {
 }
 
 function blackout() {
-
+  for (let y = 0; y < grid.length; y++) {
+    for (let x = 0; x < grid[y].length; x++) {
+      let black = random(0,5);
+      if (black < 2) {
+        grid[y][x] === IMPASSIBLE;
+        fill("black"); 
+      }
+    }
+  }
 }
