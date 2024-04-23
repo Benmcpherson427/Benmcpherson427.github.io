@@ -8,10 +8,11 @@
 
 let grid;
 let cellSize;
-const GRID_SIZE = 4;
+const GRID_SIZE = 8;
 const PLAYER = 9;
 const OPENTILE = 0;
 const IMPASSIBLE = 1;
+const KILL = 5;
 let player = {
   x: 0,
   y: 0,
@@ -70,19 +71,20 @@ function keyPressed() {
 
   if (key === "w") {
     movePlayer(player.x + 0, player.y - 1);
-    blackout();
+    generateBlackoutTiles;
+  
   }
   if (key === "s") {
     movePlayer(player.x + 0, player.y + 1);
-    blackout();
+  
   }
   if (key === "a"){
     movePlayer(player.x - 1, player.y + 0);
-    blackout();
+  
   }
   if (key === "d") {
     movePlayer(player.x + 1, player.y + 0);
-    blackout();
+  
   }
 
   if (key === " " && state === "start screen"){
@@ -114,6 +116,9 @@ function displayGrid() {
       else if (grid[y][x] === PLAYER)  {
         fill("red");
       }
+      else if (grid[y][x] === KILL) {
+        fill("black");
+      }
       square(x * cellSize, y * cellSize, cellSize);
     }
   }
@@ -124,7 +129,6 @@ function generateRandomGrid(cols, rows) {
   for (let y = 0; y < rows; y++) {
     emptyArray.push([]);
     for (let x = 0; x < cols; x++) {
-      //half the time, be a 1. Other half, be a 0.
       emptyArray[y].push(0);
     }
   }
@@ -142,13 +146,11 @@ function generateEmptyGrid(cols, rows) {
   return emptyArray;
 }
 
-function blackout() {
+function generateBlackoutTiles() {
   for (let y = 0; y < grid.length; y++) {
     for (let x = 0; x < grid[y].length; x++) {
-      let black = random(0,5);
-      if (black < 2) {
-        grid[y][x] === IMPASSIBLE;
-        fill("black"); 
+      if (random(5) < 2) {
+        grid[y][x] === KILL;
       }
     }
   }
