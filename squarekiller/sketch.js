@@ -71,7 +71,8 @@ function keyPressed() {
 
   if (key === "w") {
     movePlayer(player.x + 0, player.y - 1);
-    generateBlackoutTiles;
+    grid = generateBlackoutTiles(GRID_SIZE, GRID_SIZE);
+    displayGrid();
   
   }
   if (key === "s") {
@@ -84,7 +85,6 @@ function keyPressed() {
   }
   if (key === "d") {
     movePlayer(player.x + 1, player.y + 0);
-  
   }
 
   if (key === " " && state === "start screen"){
@@ -146,12 +146,18 @@ function generateEmptyGrid(cols, rows) {
   return emptyArray;
 }
 
-function generateBlackoutTiles() {
-  for (let y = 0; y < grid.length; y++) {
-    for (let x = 0; x < grid[y].length; x++) {
+function generateBlackoutTiles(cols, rows) {
+  let emptyArray = [];
+  for (let y = 0; y < rows; y++) {
+    emptyArray.push([]);
+    for (let x = 0; x < cols; x++) {
       if (random(5) < 2) {
-        grid[y][x] === KILL;
+        emptyArray.push(5);
+      }
+      else {
+        emptyArray.push(0);
       }
     }
   }
+  return emptyArray;
 }
