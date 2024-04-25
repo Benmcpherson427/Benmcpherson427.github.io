@@ -60,6 +60,8 @@ function draw() {
   }
 }
 
+
+// When a certain key is pressed, a function happens. ex; wasd the character
 function keyPressed() {
   if (key === "r") {
     grid = generateRandomGrid(GRID_SIZE, GRID_SIZE);
@@ -71,7 +73,6 @@ function keyPressed() {
 
   if (key === "w") {
     movePlayer(player.x + 0, player.y - 1);
-    grid = generateBlackoutTiles(GRID_SIZE, GRID_SIZE);
     displayGrid();
   
   }
@@ -146,18 +147,20 @@ function generateEmptyGrid(cols, rows) {
   return emptyArray;
 }
 
-function generateBlackoutTiles(cols, rows) {
-  let emptyArray = [];
-  for (let y = 0; y < rows; y++) {
-    emptyArray.push([]);
-    for (let x = 0; x < cols; x++) {
-      if (random(5) < 2) {
-        emptyArray.push(5);
-      }
-      else {
-        emptyArray.push(0);
-      }
-    }
-  }
-  return emptyArray;
-}
+
+//  Old idea where tiles spawned and killed you.
+// function generateBlackoutTiles(cols, rows) {
+//   let emptyArray = [];
+//   for (let y = 0; y < rows; y++) {
+//     emptyArray.push([]);
+//     for (let x = 0; x < cols; x++) {
+//       if (random(5) < 2) {
+//         emptyArray.push(5);
+//       }
+//       else {
+//         emptyArray.push(0);
+//       }
+//     }
+//   }
+//   return emptyArray;
+// }
