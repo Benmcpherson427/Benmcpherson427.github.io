@@ -13,7 +13,7 @@
 ## Projects
 - [Interactive scene](scene)
 - [Arrays scene](neonart)
-- [2D arrays](squarekiller)
+- [2D arrays](RNGmaze)
 
 ## Major Project
 - [Major Project](majorproject)
