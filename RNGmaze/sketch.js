@@ -6,13 +6,37 @@
 // - describe what you did to take this project "above and beyond"
 
 
-let grid;
+let grid = [[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1],
+            [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1],
+            [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0],
+            [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
+            [0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
+            [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
+            [0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1],
+            [0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1],
+            [0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1],
+            [0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+            [1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1],
+            [1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1],
+            [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+            [1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+            [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 5],
+            [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1],
+            [0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
+            [0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1],
+            [0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1],
+            [0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 let cellSize;
-const GRID_SIZE = 8;
+const GRID_SIZE = 25;
 const PLAYER = 9;
 const OPENTILE = 0;
 const IMPASSIBLE = 1;
-const KILL = 5;
+const WIN = 5;
 let player = {
   x: 0,
   y: 0,
@@ -28,8 +52,6 @@ function setup() {
     createCanvas(windowHeight, windowHeight);
   }
 
-  //if randomizing the grid, do this:
-  grid = generateRandomGrid(GRID_SIZE, GRID_SIZE);
   
   //this is dumb -- should check if this is the right size!
   cellSize = height/grid.length;
@@ -63,29 +85,25 @@ function draw() {
 
 // When a certain key is pressed, a function happens. ex; wasd the character
 function keyPressed() {
-  if (key === "r") {
-    grid = generateRandomGrid(GRID_SIZE, GRID_SIZE);
-  }
-
-  if (key === "e") {
-    grid = generateEmptyGrid(GRID_SIZE, GRID_SIZE);
-  }
 
   if (key === "w") {
     movePlayer(player.x + 0, player.y - 1);
-    displayGrid();
+    randomReset();
   
   }
   if (key === "s") {
     movePlayer(player.x + 0, player.y + 1);
+    randomReset();
   
   }
   if (key === "a"){
     movePlayer(player.x - 1, player.y + 0);
+    randomReset();
   
   }
   if (key === "d") {
     movePlayer(player.x + 1, player.y + 0);
+    randomReset();
   }
 
   if (key === " " && state === "start screen"){
@@ -94,7 +112,7 @@ function keyPressed() {
 }
 
 function movePlayer(x, y) {
-  if (x < GRID_SIZE && y < GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === OPENTILE) {
+  if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === OPENTILE) {
     let oldx = player.x;
     let oldy = player.y;
 
@@ -117,7 +135,7 @@ function displayGrid() {
       else if (grid[y][x] === PLAYER)  {
         fill("red");
       }
-      else if (grid[y][x] === KILL) {
+      else if (grid[y][x] === IMPASSIBLE) {
         fill("black");
       }
       square(x * cellSize, y * cellSize, cellSize);
@@ -125,41 +143,38 @@ function displayGrid() {
   }
 }
 
-function generateRandomGrid(cols, rows) {
-  let emptyArray = [];
-  for (let y = 0; y < rows; y++) {
-    emptyArray.push([]);
-    for (let x = 0; x < cols; x++) {
-      emptyArray[y].push(0);
-    }
-  }
-  return emptyArray;
-}
+function randomReset() {
+  if (random(30) < 1) {
+    let oldx = player.x;
+    let oldy = player.y;
 
-function generateEmptyGrid(cols, rows) {
-  let emptyArray = [];
-  for (let y = 0; y < rows; y++) {
-    emptyArray.push([]);
-    for (let x = 0; x < cols; x++) {
-      emptyArray[y].push(0);
-    }
+    grid[oldy][oldx] = OPENTILE;
+
+    player.x = 0;
+    player.y = 0;
+    grid[0][0] = PLAYER;
+
   }
-  return emptyArray;
 }
 
 
-//  Old idea where tiles spawned and killed you.
-// function generateBlackoutTiles(cols, rows) {
+// function generateRandomGrid(cols, rows) {
 //   let emptyArray = [];
 //   for (let y = 0; y < rows; y++) {
 //     emptyArray.push([]);
 //     for (let x = 0; x < cols; x++) {
-//       if (random(5) < 2) {
-//         emptyArray.push(5);
-//       }
-//       else {
-//         emptyArray.push(0);
-//       }
+//       emptyArray[y].push(0);
+//     }
+//   }
+//   return emptyArray;
+// }
+
+// function generateEmptyGrid(cols, rows) {
+//   let emptyArray = [];
+//   for (let y = 0; y < rows; y++) {
+//     emptyArray.push([]);
+//     for (let x = 0; x < cols; x++) {
+//       emptyArray[y].push(0);
 //     }
 //   }
 //   return emptyArray;
