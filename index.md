@@ -9,6 +9,7 @@
 - [Bubble Movement](bubble)
 - [2D Grid](grid)
 - [Game of Life](gameoflife)
+- [Walker OOP](walker)
 
 ## Projects
 - [Interactive scene](scene)
