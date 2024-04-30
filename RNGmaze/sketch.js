@@ -87,8 +87,11 @@ function draw() {
     displayGrid();
   }
   else if (state === "win") {
-    background(255);
-    text
+    background(0);
+    fill(255);
+    textSize = 40;
+    textAlign(CENTER, CENTER);
+    text("You win!");
   }
 }
 
@@ -120,7 +123,7 @@ function keyPressed() {
     endJump();
   }
 
-  if (key === " " && state === "start screen"){
+  if (key === " " && (state === "start screen" || state === "win")){
     state = "game";
   }
 }
@@ -137,14 +140,8 @@ function movePlayer(x, y) {
 
     grid[player.y][player.x] = PLAYER;
   }
-  else if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === END) {
-    let oldx = player.x;
-    let oldy = player.y;
-
-    player.x = x;
-    player.y = y;
-
-    grid[oldy][oldx] = WIN;
+  if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === END) {
+    winner();
   }
 }
 
@@ -169,21 +166,21 @@ function displayGrid() {
   }
 }
 
-function endJump() {
-  for (let y = 0; y < grid.length; y++) {
-    for (let x = 0; x < grid[y].length; x++) {
-      if (random(5) < 1) {
-        let winTile = random(ends);
-        winTile = END;
-        fill("green");
-        square(x * cellSize, y * cellSize, cellSize);
-      }
-    }
-  }
-}
+// function endJump() {
+//   for (let y = 0; y < grid.length; y++) {
+//     for (let x = 0; x < grid[y].length; x++) {
+//       if (random(5) < 1) {
+//         let winTile = random(ends);
+//         winTile = END;
+//         fill("green");
+//         square(x * cellSize, y * cellSize, cellSize);
+//       }
+//     }
+//   }
+// }
 
 function randomReset() {
-  if (random(25) < 1) {
+  if (random(10000) < 1) {
     let oldx = player.x;
     let oldy = player.y;
 
@@ -196,10 +193,9 @@ function randomReset() {
   }
 }
 function winner() {
-  if (grid[y][x] === WIN) {
-    state = "win";
-  }
+  state = "win";
 }
+
 
 
 // function generateRandomGrid(cols, rows) {
