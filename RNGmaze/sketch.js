@@ -5,27 +5,27 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-
+// All the parameters used in the code, such as a hard-coded grid.
 let grid = [[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1],
             [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1],
             [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0],
             [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
-            [0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
+            [0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
             [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0],
-            [0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1],
-            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1],
+            [0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1],
+            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1],
             [0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1],
             [0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1],
             [0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
             [1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1],
-            [1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1],
+            [1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1],
             [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1],
-            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5],
             [1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 5],
-            [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1],
+            [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+            [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1],
             [0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
             [0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1],
             [0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1],
@@ -78,27 +78,38 @@ function windowResized() {
   cellSize = height/grid.length;
 }
 
+
+// Here the game checks to see what state you're in and then displays the correct screen accordingly
 function draw() {
   if (state === "start screen") {
     background(0);
+    fill(255);
+    textSize(40);
+    textAlign(CENTER, CENTER);
+    text("Welcome to the RNG maze!", width/2, height/2 - 50);
+    text("Try not to punch your computer", width/2, height/2);
+    text("Press space to play", width/2, height/2 + 50);
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    text("Use WASD to move", width/2, height/2 + 150);
   }
   else if (state === "game") {
     background(220);
     displayGrid();
-
-    let theEnd = {x: 4, y: 2};
-    fill('green');
-    square(theEnd.x * cellSize, theEnd.y * cellSize, cellSize);
-
   }
   else if (state === "win") {
-    background(255);
-    text
+    background(0);
+    fill(255);
+    textSize(40);
+    textAlign(CENTER, CENTER);
+    text("You win!", width/2, height/2 - 25);
+    text("Press space to play again", width/2, height/2 + 25);
+
   }
 }
 
 
-// When a certain key is pressed, a function happens. ex; wasd the character
+// When a certain key is pressed, a function happens. ex; wasd the character moves, space, resets when the state is not "game"
 function keyPressed() {
 
   if (key === "w") {
@@ -125,12 +136,14 @@ function keyPressed() {
     endJump();
   }
 
-  if (key === " " && state === "start screen"){
+  if (key === " " && (state === "start screen" || state === "win")){
     state = "game";
   }
 }
 
+// This function allows the player to move, by detecting if the block in front is emtpy ot not
 function movePlayer(x, y) {
+  // This checks for an empty block
   if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === OPENTILE) {
     let oldx = player.x;
     let oldy = player.y;
@@ -142,18 +155,18 @@ function movePlayer(x, y) {
 
     grid[player.y][player.x] = PLAYER;
   }
-  else if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === END) {
-    let oldx = player.x;
-    let oldy = player.y;
 
-    player.x = x;
-    player.y = y;
-
-    grid[oldy][oldx] = WIN;
+// This checks if the block is an end and then calls the state "win"
+  if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === END) {
+    grid[player.y][player.x] = OPENTILE;
+    player.x = 0;
+    player.y = 0;
+    grid[player.y][player.x] = PLAYER
+    state = "win";
   }
 }
 
-
+// This creates the grid above with the empty and blocked paths, which makes it so you can't walk anywhere
 function displayGrid() {
   for (let y = 0; y < grid.length; y++) {
     for (let x = 0; x < grid[y].length; x++) {
@@ -174,21 +187,24 @@ function displayGrid() {
   }
 }
 
-function endJump() {
-  for (let y = 0; y < grid.length; y++) {
-    for (let x = 0; x < grid[y].length; x++) {
-      if (random(5) < 1) {
-        let winTile = random(ends);
-        winTile = END;
-        fill("green");
-        square(x * cellSize, y * cellSize, cellSize);
-      }
-    }
-  }
-}
+// This function is what allows the end point to jump around. Unfortunately it never got working properly
+// function endJump() {
+//   for (let y = 0; y < grid.length; y++) {
+//     for (let x = 0; x < grid[y].length; x++) {
+//       if (random(5) < 1) {
+//         let winTile = random(ends);
+//         winTile = END;
+//         fill("green");
+//         square(x * cellSize, y * cellSize, cellSize);
+//       }
+//     }
+//   }
+// }
 
+
+// This function is randomly called everytime WASD are pressed and resets the player to the start if successfully called
 function randomReset() {
-  if (random(25) < 1) {
+  if (random(40) < 1) {
     let oldx = player.x;
     let oldy = player.y;
 
@@ -200,31 +216,3 @@ function randomReset() {
 
   }
 }
-function winner() {
-  if (grid[y][x] === WIN) {
-    state = "win";
-  }
-}
-
-
-// function generateRandomGrid(cols, rows) {
-//   let emptyArray = [];
-//   for (let y = 0; y < rows; y++) {
-//     emptyArray.push([]);
-//     for (let x = 0; x < cols; x++) {
-//       emptyArray[y].push(0);
-//     }
-//   }
-//   return emptyArray;
-// }
-
-// function generateEmptyGrid(cols, rows) {
-//   let emptyArray = [];
-//   for (let y = 0; y < rows; y++) {
-//     emptyArray.push([]);
-//     for (let x = 0; x < cols; x++) {
-//       emptyArray[y].push(0);
-//     }
-//   }
-//   return emptyArray;
-// }
