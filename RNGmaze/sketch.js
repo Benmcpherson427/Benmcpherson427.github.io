@@ -85,11 +85,6 @@ function draw() {
   else if (state === "game") {
     background(220);
     displayGrid();
-
-    let theEnd = {x: 4, y: 2};
-    fill('green');
-    square(theEnd.x * cellSize, theEnd.y * cellSize, cellSize);
-
   }
   else if (state === "win") {
     background(255);
