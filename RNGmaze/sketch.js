@@ -5,15 +5,15 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
-
+// All the parameters used in the code, such as a hard-coded grid.
 let grid = [[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1],
             [1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1],
             [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0],
             [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
             [0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0],
-            [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0],
+            [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 5, 0],
             [0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1],
-            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 5, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1],
             [0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1],
             [0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1],
             [0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1],
@@ -22,13 +22,13 @@ let grid = [[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1
             [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1],
             [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1],
             [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
-            [1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+            [1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5],
             [1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
             [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 5],
             [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1],
             [0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1],
             [0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1],
-            [0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1],
+            [0, 1, 5, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1],
             [0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 let cellSize;
@@ -78,6 +78,8 @@ function windowResized() {
   cellSize = height/grid.length;
 }
 
+
+// Here the game checks to see what state you're in and then displays the correct screen accordingly
 function draw() {
   if (state === "start screen") {
     background(0);
@@ -89,14 +91,15 @@ function draw() {
   else if (state === "win") {
     background(0);
     fill(255);
-    textSize = 40;
+    textSize = 300;
     textAlign(CENTER, CENTER);
-    text("You win!");
+    text("You win!", width/2, height/2);
+
   }
 }
 
 
-// When a certain key is pressed, a function happens. ex; wasd the character
+// When a certain key is pressed, a function happens. ex; wasd the character moves, space, resets when the state is not "game"
 function keyPressed() {
 
   if (key === "w") {
@@ -128,7 +131,9 @@ function keyPressed() {
   }
 }
 
+// This function allows the player to move, by detecting if the block in front is emtpy ot not
 function movePlayer(x, y) {
+  // This checks for an empty block
   if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === OPENTILE) {
     let oldx = player.x;
     let oldy = player.y;
@@ -140,12 +145,14 @@ function movePlayer(x, y) {
 
     grid[player.y][player.x] = PLAYER;
   }
+
+// This checks if the block is an end and then calls the state "win"
   if (x <= GRID_SIZE && y <= GRID_SIZE && x >= 0 && y >= 0 && grid[y][x] === END) {
-    winner();
+    state = "win";
   }
 }
 
-
+// This creates the grid above with the empty and blocked paths, which makes it so you can't walk anywhere
 function displayGrid() {
   for (let y = 0; y < grid.length; y++) {
     for (let x = 0; x < grid[y].length; x++) {
@@ -166,6 +173,7 @@ function displayGrid() {
   }
 }
 
+// This function is what allows the end point to jump around. Unfortunately it never got working properly
 // function endJump() {
 //   for (let y = 0; y < grid.length; y++) {
 //     for (let x = 0; x < grid[y].length; x++) {
@@ -179,6 +187,8 @@ function displayGrid() {
 //   }
 // }
 
+
+// This function is randomly called everytime WASD are pressed and resets the player to the start if successfully called
 function randomReset() {
   if (random(10000) < 1) {
     let oldx = player.x;
@@ -192,30 +202,8 @@ function randomReset() {
 
   }
 }
-function winner() {
-  state = "win";
+
+function resetPlayer() {
+  player.x = 0;
+  player.y = 0;
 }
-
-
-
-// function generateRandomGrid(cols, rows) {
-//   let emptyArray = [];
-//   for (let y = 0; y < rows; y++) {
-//     emptyArray.push([]);
-//     for (let x = 0; x < cols; x++) {
-//       emptyArray[y].push(0);
-//     }
-//   }
-//   return emptyArray;
-// }
-
-// function generateEmptyGrid(cols, rows) {
-//   let emptyArray = [];
-//   for (let y = 0; y < rows; y++) {
-//     emptyArray.push([]);
-//     for (let x = 0; x < cols; x++) {
-//       emptyArray[y].push(0);
-//     }
-//   }
-//   return emptyArray;
-// }
