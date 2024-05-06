@@ -11,6 +11,7 @@
 - [Game of Life](gameoflife)
 - [Walker OOP](walker)
 - [Fireworks](fireworks)
+- [Connected Nodes](nodes)
 
 ## Projects
 - [Interactive scene](scene)
