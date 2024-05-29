@@ -13,6 +13,7 @@
 - [Fireworks](fireworks)
 - [Connected Nodes](nodes)
 - [clickbutton](buttons)
+- [Recursive Circles](rec-circ)
 
 ## Projects
 - [Interactive scene](scene)
