@@ -14,6 +14,7 @@
 - [Connected Nodes](nodes)
 - [clickbutton](buttons)
 - [Recursive Circles](rec-circ)
+- [Sierpinski Triangle](sierpinski)
 
 ## Projects
 - [Interactive scene](scene)
